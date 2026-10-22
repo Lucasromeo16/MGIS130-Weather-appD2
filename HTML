@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifestyle Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header & Location Bar -->
+        <header>
+            <div>
+                <h1 id="current-city-name">Rochester, NY</h1>
+                <p id="current-datetime"></p>
+</div>
+            <div class="location-selector">
+                <label for="city-select">Location:</label>
+                <select id="city-select" onchange="changeCity(this.value)">
+                    <option value="Rochester">Rochester, NY</option>
+                    <option value="Toronto">Toronto, ON</option>
+                    <option value="Miami">Miami, FL</option>
+                    <option value="Seattle">Seattle, WA</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Main Dashboard Layout -->
+<div class="dashboard-grid">
+
+            <!-- 1. Weather Reality Check -->
+            <div class="card">
+                <h2>🌡️ Weather Reality Check</h2>
+                <div id="reality-check-content"></div>
+                <div class="hourly-scroll" id="hourly-forecast-container"></div>
+            </div>
+
+            <!-- 2. The Perfect Window -->
+            <div class="card">
+                <h2>⏰ The Perfect Window</h2>
+                <p class="subtitle">Find the best time for your activity today & get workout outfit tips.</p>
+                <div class="inline-fields"><div class="form-group">
+                        <label for="window-activity">Activity</label>
+                        <select id="window-activity" onchange="calculatePerfectWindow()">
+                            <option value="Outdoor Workout">Outdoor Workout</option>
+                            <option value="Pickleball Match">Pickleball Match</option>
+                            <option value="Basketball Hoops">Basketball Hoops</option>
+                            <option value="Lacrosse Practice">Lacrosse Practice</option>
+                            <option value="Biking / Cycling">Biking / Cycling</option>
+                            <option value="Dog Walk / Stroll">Dog Walk / Stroll</option>
+                        </select></div>
+                    <div class="form-group">
+                        <label for="window-duration">Duration</label>
+                        <select id="window-duration" onchange="calculatePerfectWindow()">
+                            <option value="30">30 Mins</option>
+                            <option value="60" selected>60 Mins</option>
+                            <option value="90">90 Mins</option>
+                        </select>
+                    </div>
+                </div><button onclick="calculatePerfectWindow()">Find Best Window</button>
+                <div class="result-box" id="perfect-window-result">
+                    Select duration and activity to calculate the optimal time window.
+                </div>
+            </div>
+
+            <!-- 3. Weather Regret Predictor -->
+            <div class="card">
+                <h2>⚠️ Weather Regret Predictor</h2>
+                <div class="inline-fields"><div class="form-group">
+                        <label for="regret-activity">Planned Activity</label>
+                        <select id="regret-activity" onchange="predictRegret()">
+                            <option value="pickleball">Pickleball Match</option>
+                            <option value="basketball">Outdoor Basketball</option>
+                            <option value="lacrosse">Lacrosse Practice</option>
+                            <option value="biking">Biking Ride</option>
+                            <option value="running">Long Distance Run</option>
+                            <option value="picnic">Outdoor Picnic / BBQ</option>
+                            <option value="carwash">Washing the Car</option>
+                        </select>
+                    </div><div class="form-group">
+                        <label for="regret-context">Where are you heading?</label>
+                        <select id="regret-context" onchange="predictRegret()">
+                            <option value="class">College / School Class</option>
+                            <option value="rink">Ice Rink</option>
+                            <option value="outdoorsport">Outdoor Sports Field</option>
+                            <option value="everyday">Everyday / Casual</option>
+                        </select>
+                    </div>
+                </div>
+                <button onclick="predictRegret()">Assess Risk & Outfit</button><div class="result-box" id="regret-result">
+                    Check if weather conditions will ruin your plans.
+                </div>
+            </div>
+
+            <!-- 4. Forecast Confidence Meter -->
+            <div class="card">
+                <h2>📊 Forecast Confidence Meter</h2>
+                <div id="confidence-content"></div>
+            </div>
+
+            <!-- 5. Weather Challenge of the Day -->
+            <div class="card">
+                <h2>🎯 Daily Weather Challenge</h2>
+                <div class="challenge-box">
+                    <p id="challenge-text"></p><button onclick="generateNewChallenge()" class="btn-sm">Get Another Challenge</button>
+                </div>
+            </div>
+
+            <!-- 6. City-versus-City Showdown -->
+            <div class="card">
+                <h2>⚔️ City Showdown</h2>
+                <div class="inline-fields">
+                    <div class="form-group">
+                        <label for="city1">City 1</label>
+                        <input type="text" id="city1" value="Rochester" disabled />
+                    </div><div class="form-group">
+                        <label for="city2">City 2</label>
+                        <select id="city2">
+                            <option value="Toronto">Toronto</option>
+                            <option value="Miami">Miami</option>
+                            <option value="Seattle">Seattle</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="showdown-activity">For Activity</label>
+                    <select id="showdown-activity">
+                        <option value="outdoor">Outdoor General</option>
+                        <option value="sightseeing">Sightseeing</option></select>
+                </div>
+                <button onclick="runShowdown()">Compare Cities</button>
+                <div class="result-box" id="showdown-result">
+                    Click compare to run the comparison.
+                </div>
+            </div>
+
+            <!-- 7. Leave-By Advisor -->
+            <div class="card">
+                <h2>🚗 Leave-By Advisor</h2>
+                <div class="inline-fields">
+                    <div class="form-group">
+                        <label for="leave-time">Target Departure</label>
+                        <select id="leave-time">
+                            <option value="12">12:00 PM</option>
+                            <option value="14">2:00 PM</option>
+                            <option value="16">4:00 PM</option>
+                            <option value="18">6:00 PM</option>
+                        </select></div>
+                    <div class="form-group">
+                        <label for="leave-dest">Destination</label>
+                        <input type="text" id="leave-dest" value="Downtown" />
+                    </div>
+                </div>
