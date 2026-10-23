@@ -1,0 +1,82 @@
+{
+"Rochester": {
+"theme": "rainy",
+"temp": 52,
+"feelsLike": 44,
+"condition": "Light Rain & Wind",
+"windSpeed": 18,
+"humidity": 82,
+"uvIndex": 2,
+"confidence": "Moderate",
+"volatilityReason": "Moving frontal system coming across Lake Ontario",
+"accuracyHistory": { "avgError": "2.8°F", "matchedRain": "91%" },
+"hourly": [
+{ "time": "9 AM", "temp": 48, "rainProb": 70, "wind": 15, "cond": "Rain" },
+{ "time": "11 AM", "temp": 50, "rainProb": 60, "wind": 16, "cond": "Showers" },
+{ "time": "1 PM", "temp": 52, "rainProb": 40, "wind": 18, "cond": "Overcast" },
+{ "time": "3 PM", "temp": 54, "rainProb": 10, "wind": 12, "cond": "Cloudy" },
+{ "time": "5 PM", "temp": 53, "rainProb": 0, "wind": 8, "cond": "Clear Spells" },
+{ "time": "7 PM", "temp": 49, "rainProb": 0, "wind": 6, "cond": "Clear" }
+]
+},
+"Toronto": {
+"theme": "cloudy",
+"temp": 55,
+"feelsLike": 52,
+"condition": "Mostly Cloudy",
+"windSpeed": 10,
+"humidity": 65,
+"uvIndex": 3,
+"confidence": "High",
+"volatilityReason": "Stable high-pressure ridge forming",
+"accuracyHistory": { "avgError": "1.9°F", "matchedRain": "95%" },
+"hourly": [
+{ "time": "9 AM", "temp": 50, "rainProb": 10, "wind": 8, "cond": "Cloudy" },
+{ "time": "11 AM", "temp": 52, "rainProb": 10, "wind": 9, "cond": "Cloudy" },
+{ "time": "1 PM", "temp": 55, "rainProb": 5, "wind": 10, "cond": "Partly Cloudy" },
+{ "time": "3 PM", "temp": 56, "rainProb": 5, "wind": 10, "cond": "Partly Cloudy" },
+{ "time": "5 PM", "temp": 54, "rainProb": 0, "wind": 7, "cond": "Clear" },
+{ "time": "7 PM", "temp": 51, "rainProb": 0, "wind": 5, "cond": "Clear" }
+]
+},
+"Miami": {
+"theme": "sunny",
+"temp": 84,
+"feelsLike": 91,
+"condition": "Sunny & Humid",
+"windSpeed": 8,
+"humidity": 78,
+"uvIndex": 9,
+"confidence": "High",
+"volatilityReason": "Typical tropical daytime heating patterns",
+"accuracyHistory": { "avgError": "1.4°F", "matchedRain": "88%" },
+"hourly": [
+{ "time": "9 AM", "temp": 80, "rainProb": 10, "wind": 6, "cond": "Sunny" },
+{ "time": "11 AM", "temp": 83, "rainProb": 15, "wind": 7, "cond": "Sunny" },
+{ "time": "1 PM", "temp": 85, "rainProb": 20, "wind": 8, "cond": "Hot" },
+{ "time": "3 PM", "temp": 86, "rainProb": 30, "wind": 9, "cond": "Humid" },
+{ "time": "5 PM", "temp": 83, "rainProb": 10, "wind": 8, "cond": "Sunny" },
+{ "time": "7 PM", "temp": 80, "rainProb": 5, "wind": 6, "cond": "Warm Night" }
+]
+},
+"Seattle": {
+"theme": "rainy",
+"temp": 49,
+"feelsLike": 45,
+"condition": "Persistent Drizzle",
+"windSpeed": 12,
+"humidity": 88,
+"uvIndex": 1,
+"confidence": "Very High",
+"volatilityReason": "Consistent onshore marine flow",
+"accuracyHistory": { "avgError": "1.2°F", "matchedRain": "98%" },
+"hourly": [
+{ "time": "9 AM", "temp": 46, "rainProb": 80, "wind": 10, "cond": "Drizzle" },
+{ "time": "11 AM", "temp": 48, "rainProb": 75, "wind": 11, "cond": "Light Rain" },
+{ "time": "1 PM", "temp": 49, "rainProb": 60, "wind": 12, "cond": "Drizzle" },
+{ "time": "3 PM", "temp": 50, "rainProb": 50, "wind": 10, "cond": "Misty" },
+{ "time": "5 PM", "temp": 48, "rainProb": 40, "wind": 8, "cond": "Cloudy" },
+{ "time": "7 PM", "temp": 46, "rainProb": 30, "wind": 7, "cond": "Overcast" }
+]
+}
+}
